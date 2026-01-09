@@ -1,0 +1,709 @@
+{
+	"info": {
+		"_postman_id": "ca43d290-1056-4ff5-8a23-6c4325ee6dd4",
+		"name": "Mini Pos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26044986"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "http://localhost/mini-pos/public/api/login",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"test-shop@gmail.com\",\n  \"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/mini-pos/public/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"mini-pos",
+								"public",
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost/mini-pos/public/api/test",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|3jltE20PWeirR54XvnhCt33s0dDhrcaOMPMeWqI4db14480d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/mini-pos/public/api/test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"mini-pos",
+								"public",
+								"api",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost/mini-pos/public/api/logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|pynz0BMgU41Hpm0uzbNmtRlECz2RAlLIAeOWDCqSc48e27b3",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/mini-pos/public/api/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"mini-pos",
+								"public",
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "http://localhost/mini-pos/public/api/products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|A8gMVPYIfeciWaUdGEo0HAc6HTHOh6fmEfT8ITZQe102b540",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "2",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Oil 1L\",\n  \"sku\": \"oil-1l\",\n  \"price\": 170,\n  \"stock\": 30,\n  \"low_stock_threshold\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/mini-pos/public/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"mini-pos",
+								"public",
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost/mini-pos/public/api/products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|A8gMVPYIfeciWaUdGEo0HAc6HTHOh6fmEfT8ITZQe102b540",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "2",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/mini-pos/public/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"mini-pos",
+								"public",
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost/mini-pos/public/api/products/6",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|YaZ3QacVk9kWSsHxnLKDKKVbJZ7nOIlyKAXtfMkP6782da34",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-TENANT-ID",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"price\": 180\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/mini-pos/public/api/products/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"mini-pos",
+								"public",
+								"api",
+								"products",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "http://localhost/mini-pos/public/api/customers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|A8gMVPYIfeciWaUdGEo0HAc6HTHOh6fmEfT8ITZQe102b540",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Customer 2\",\n  \"phone\": \"01826611702\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/mini-pos/public/api/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"mini-pos",
+								"public",
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost/mini-pos/public/api/customers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|3jltE20PWeirR54XvnhCt33s0dDhrcaOMPMeWqI4db14480d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/mini-pos/public/api/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"mini-pos",
+								"public",
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost/mini-pos/public/api/customers/3",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|Q320DhCXG45FK4sJaeB0ThuSRnxuRTb2EVT2JCiFe4f5cdef",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-TENANT-ID",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Customer 2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/mini-pos/public/api/customers/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"mini-pos",
+								"public",
+								"api",
+								"customers",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "http://localhost/mini-pos/public/api/orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|3jltE20PWeirR54XvnhCt33s0dDhrcaOMPMeWqI4db14480d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customer_id\": 1,\n  \"items\": [\n    { \"product_id\": 1, \"qty\": 2 },\n    { \"product_id\": 2, \"qty\": 3 }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/mini-pos/public/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"mini-pos",
+								"public",
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost/mini-pos/public/api/orders/2/pay",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|3jltE20PWeirR54XvnhCt33s0dDhrcaOMPMeWqI4db14480d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/mini-pos/public/api/orders/2/pay",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"mini-pos",
+								"public",
+								"api",
+								"orders",
+								"2",
+								"pay"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost/mini-pos/public/api/orders/2/cancel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|3jltE20PWeirR54XvnhCt33s0dDhrcaOMPMeWqI4db14480d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost/mini-pos/public/api/orders/2/cancel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"mini-pos",
+								"public",
+								"api",
+								"orders",
+								"2",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost/mini-pos/public/api/orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|YaZ3QacVk9kWSsHxnLKDKKVbJZ7nOIlyKAXtfMkP6782da34",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-TENANT-ID",
+								"value": "2",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/mini-pos/public/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"mini-pos",
+								"public",
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "http://localhost/mini-pos/public/api/reports/daily-sales",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|3jltE20PWeirR54XvnhCt33s0dDhrcaOMPMeWqI4db14480d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/mini-pos/public/api/reports/daily-sales",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"mini-pos",
+								"public",
+								"api",
+								"reports",
+								"daily-sales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost/mini-pos/public/api/reports/top-products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|3jltE20PWeirR54XvnhCt33s0dDhrcaOMPMeWqI4db14480d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/mini-pos/public/api/reports/top-products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"mini-pos",
+								"public",
+								"api",
+								"reports",
+								"top-products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost/mini-pos/public/api/reports/low-stock",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "2|3jltE20PWeirR54XvnhCt33s0dDhrcaOMPMeWqI4db14480d",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Tenant-ID",
+								"value": "1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost/mini-pos/public/api/reports/low-stock",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"mini-pos",
+								"public",
+								"api",
+								"reports",
+								"low-stock"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
