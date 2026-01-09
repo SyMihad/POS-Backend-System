@@ -13,7 +13,8 @@ class ProductPolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->role === 'owner';
+        // return $user->role === 'owner';
+        return true;
     }
 
     /**

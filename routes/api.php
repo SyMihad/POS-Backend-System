@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\CustomerController;
 use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\ProductController;
 use App\Http\Controllers\Api\ReportController;
+use App\Http\Controllers\Api\StaffController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -38,4 +39,8 @@ Route::middleware(['auth:sanctum', 'resolve.tenant'])->group(function () {
     Route::get('/reports/top-products', [ReportController::class, 'topProducts']);
 
     Route::get('/reports/low-stock', [ReportController::class, 'lowStock']);
+
+    //staff
+    Route::get('/staff', [StaffController::class, 'index']);
+    Route::post('/staff', [StaffController::class, 'store']);
 });
