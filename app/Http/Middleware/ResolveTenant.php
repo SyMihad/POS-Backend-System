@@ -24,6 +24,14 @@ class ResolveTenant
 
         app()->instance('tenant', $tenant);
 
+        $user = auth()->user();
+
+        if ($request->hasHeader('x-tenant-id')) {
+            if ($request->header('x-tenant-id') != $user->tenant_id) {
+                abort(403, 'Unauthorized tenant access');
+            }
+        }
+
         return $next($request);
     }
 }

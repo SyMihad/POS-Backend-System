@@ -13,7 +13,7 @@ class ProductPolicy
      */
     public function viewAny(User $user): bool
     {
-        return true;
+        return $user->role === 'owner';
     }
 
     /**
@@ -47,7 +47,7 @@ class ProductPolicy
     {
         return $user->role === 'owner';
     }
-    
+
     /**
      * Determine whether the user can restore the model.
      */

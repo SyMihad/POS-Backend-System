@@ -9,10 +9,23 @@ use App\Models\OrderItem;
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use App\Http\Resources\OrderResource;
+
 
 class OrderController extends Controller
 {
     use AuthorizesRequests;
+
+    public function index()
+    {
+        $this->authorize('viewAny', Order::class);
+
+        $orders = Order::with(['customer', 'items.product'])
+            ->latest()
+            ->paginate(10);
+
+        return OrderResource::collection($orders);
+    }
 
     public function store(StoreOrderRequest $request)
     {
