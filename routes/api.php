@@ -24,9 +24,12 @@ Route::middleware(['auth:sanctum', 'resolve.tenant'])->group(function () {
 
     Route::get('/products', [ProductController::class, 'index']);
     Route::post('/products', [ProductController::class, 'store']);
+    Route::put('/products/{product}', [ProductController::class, 'update']);
+
 
     Route::get('/customers', [CustomerController::class, 'index']);
     Route::post('/customers', [CustomerController::class, 'store']);
+    Route::put('/customers/{customer}', [CustomerController::class, 'update']);
 
     Route::get('/orders', [OrderController::class, 'index']);
     Route::post('/orders', [OrderController::class, 'store']);

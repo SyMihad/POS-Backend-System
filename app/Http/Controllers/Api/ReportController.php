@@ -38,6 +38,7 @@ class ReportController extends Controller
             )
             ->join('orders', 'orders.id', '=', 'order_items.order_id')
             ->where('orders.status', 'paid')
+            ->where('orders.tenant_id', auth()->user()->tenant_id)
             ->groupBy('product_id')
             ->orderByDesc('total_sold')
             ->limit(5)

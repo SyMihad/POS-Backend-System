@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+// use App\Models\Scopes\TenantScope;
 use Illuminate\Database\Eloquent\Model;
 
 class OrderItem extends Model
@@ -17,4 +18,5 @@ class OrderItem extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
 }
